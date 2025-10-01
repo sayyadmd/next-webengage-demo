@@ -3,8 +3,15 @@ import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function Home() {
   function sendEvent() {
-    console.log("#####event send");
-    sendGTMEvent({ event: "gtmButtonClicked", value: "xyz" });
+    const gtmpros = {
+      event: "tap_gtmButton",
+      value: "xyz",
+      psid: 445500,
+      email: "johnvick@gmail.com",
+      user_id: "john_vick2",
+    };
+    console.log("#####event send", gtmpros);
+    sendGTMEvent(gtmpros);
   }
   return (
     <main>
@@ -19,7 +26,7 @@ export default function Home() {
         className="m-5 p-4 bg-blue-500 text-white rounded cursor-pointer"
         onClick={sendEvent}
       >
-        Send event
+        Send gtm event
       </button>
     </main>
   );
