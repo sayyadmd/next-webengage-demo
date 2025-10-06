@@ -5,10 +5,12 @@ export default function Home() {
   function sendEvent() {
     const gtmpros = {
       event: "tap_gtmButton",
-      value: "xyz",
-      psid: 445500,
-      email: "johnvick@gmail.com",
-      user_id: "john_vick2",
+      eventParams: {
+        value: "xyz_abc",
+        psid: 115500,
+        email: "johnvick@example.com",
+        user_id: "john_vick4",
+      },
     };
     console.log("#####event send", gtmpros);
     sendGTMEvent(gtmpros);
