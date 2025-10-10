@@ -1,14 +1,16 @@
 import "@/styles/globals.css";
-import { GoogleTagManager } from "@next/third-parties/google";
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+// import { GoogleTagManager } from "@next/third-parties/google";
+// const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 import { Toaster } from "react-hot-toast";
+import GTMLogin from "@/components/GTMLogin";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <Component {...pageProps} />
-      <GoogleTagManager gtmId={GTM_ID} />
+      {/* <GoogleTagManager gtmId={GTM_ID} /> */}
       <Toaster />
+      <GTMLogin />
     </>
   );
 }
