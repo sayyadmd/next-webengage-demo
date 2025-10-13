@@ -5,6 +5,7 @@ const NEXT_PUBLIC_GTM_AUTH = process.env.NEXT_PUBLIC_GTM_AUTH;
 const NEXT_PUBLIC_GTM_PREVIEW = process.env.NEXT_PUBLIC_GTM_PREVIEW;
 const NEXT_PUBLIC_GTM_COOKIES = process.env.NEXT_PUBLIC_GTM_COOKIES;
 const isLowerEnv = NEXT_PUBLIC_ENV !== "prod";
+const NEXT_PUBLIC_APP_NAME = process.env.NEXT_PUBLIC_APP_NAME;
 function getScript() {
   return `(function(w,d,s,l,i,auth,preview,cookies,isLowerEnv){
   w[l]=w[l]||[];
@@ -45,7 +46,6 @@ function getNoscript() {
 }
 
 export default function GTMLogin() {
-  const APP_NAME_FROM_PARENT = "NEET_PG";
   return (
     <>
       <Head>
@@ -59,7 +59,7 @@ export default function GTMLogin() {
             __html: `
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          appName: '${APP_NAME_FROM_PARENT}',  
+          appName: '${NEXT_PUBLIC_APP_NAME}',  
           event: 'app_context_ready'
         });
       `,
