@@ -81,21 +81,21 @@ export default function Home() {
     notify(event);
   }
   return (
-    <main>
-      <h1>GTM-Webengage Demo App</h1>
+    <main className="ml-20">
+      <h1 className="font-bold text-[20px] my-10">GTM-Webengage Demo App</h1>
       <input
-        type="number"
+        type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter a number"
-        className="border p-2 rounded w-40"
+        className="border p-2 rounded w-40 "
       />
 
       <button
         onClick={handleClick}
-        className="bg-blue-600 text-white px-4 py-2 rounded"
+        className="bg-blue-600 text-white px-4 py-2 rounded ml-6 "
       >
-        Set Value
+        Set User
       </button>
       <div className="flex flex-col w-[20%]">
         <button
