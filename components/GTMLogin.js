@@ -45,12 +45,24 @@ function getNoscript() {
 }
 
 export default function GTMLogin() {
+  const APP_NAME_FROM_PARENT = "NEET_PG";
   return (
     <>
       <Head>
         <script
           dangerouslySetInnerHTML={{
             __html: getScript(),
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          appName: '${APP_NAME_FROM_PARENT}',  
+          event: 'app_context_ready'
+        });
+      `,
           }}
         />
       </Head>

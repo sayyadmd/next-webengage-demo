@@ -1,4 +1,4 @@
-import { sendGTMEvent } from "@next/third-parties/google";
+// import { sendGTMEvent } from "@next/third-parties/google";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -77,7 +77,10 @@ export default function Home() {
       default:
         break;
     }
-    sendGTMEvent(gtmProps);
+    if (typeof window !== "undefined" && window.dataLayer) {
+      dataLayer.push(gtmProps);
+    }
+
     notify(event);
   }
   return (
