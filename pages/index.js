@@ -1,6 +1,7 @@
 // import { sendGTMEvent } from "@next/third-parties/google";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+const IS_WINDOW_AVAILABLE = typeof window !== "undefined";
 
 const notify = (event) => toast.success(event);
 
@@ -9,11 +10,15 @@ export default function Home() {
   const [finalValue, setFinalValue] = useState(null);
 
   const handleClick = () => {
-    const _value = Number(inputValue)
+    const _value = Number(inputValue);
     setFinalValue(_value);
     notify(`userId :  ${_value}`);
-
   };
+  function trackGTMEvent(event) {
+    if (!IS_WINDOW_AVAILABLE) return;
+
+    dataLayer.push(event);
+  }
   function sendEvent(event) {
     let gtmProps = {
       event: "tap_gtmButton",
@@ -79,10 +84,7 @@ export default function Home() {
       default:
         break;
     }
-    if (typeof window !== "undefined" && window.dataLayer) {
-      dataLayer.push(gtmProps);
-    }
-
+trackGTMEvent(event)
     notify(event);
   }
   return (
