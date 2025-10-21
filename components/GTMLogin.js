@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Script from "next/script";
 const NEXT_PUBLIC_GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 const NEXT_PUBLIC_ENV = process.env.NEXT_PUBLIC_ENV;
 const NEXT_PUBLIC_GTM_AUTH = process.env.NEXT_PUBLIC_GTM_AUTH;
@@ -36,9 +36,9 @@ function getNoscript() {
 
   const envParams =
     isLowerEnv &&
-    NEXT_PUBLIC_GTM_AUTH &&
-    NEXT_PUBLIC_GTM_PREVIEW &&
-    NEXT_PUBLIC_GTM_COOKIES
+      NEXT_PUBLIC_GTM_AUTH &&
+      NEXT_PUBLIC_GTM_PREVIEW &&
+      NEXT_PUBLIC_GTM_COOKIES
       ? `&gtm_auth=${NEXT_PUBLIC_GTM_AUTH}&gtm_preview=${NEXT_PUBLIC_GTM_PREVIEW}&gtm_cookies_win=${NEXT_PUBLIC_GTM_COOKIES}`
       : "";
 
@@ -48,13 +48,12 @@ function getNoscript() {
 export default function GTMLogin() {
   return (
     <>
-      <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: getScript(),
-          }}
-        />
-        <script
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: getScript(),
+        }}
+      />
+      {/* <script
           dangerouslySetInnerHTML={{
             __html: `
         window.dataLayer = window.dataLayer || [];
@@ -64,8 +63,7 @@ export default function GTMLogin() {
         });
       `,
           }}
-        />
-      </Head>
+        /> */}
       <noscript
         dangerouslySetInnerHTML={{
           __html: getNoscript(),

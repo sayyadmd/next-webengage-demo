@@ -9,8 +9,10 @@ export default function Home() {
   const [finalValue, setFinalValue] = useState(null);
 
   const handleClick = () => {
-    setFinalValue(Number(inputValue));
-    console.log("#####userId", inputValue);
+    const _value = Number(inputValue)
+    setFinalValue(_value);
+    notify(`userId :  ${_value}`);
+
   };
   function sendEvent(event) {
     let gtmProps = {
@@ -27,7 +29,7 @@ export default function Home() {
         gtmProps = {
           event: "tap_login_login",
           eventParams: {
-            value: "xyz_abc",
+            value: "xyz_abc login",
             psid: 115500,
             email: "johnvick@example.com",
           },
@@ -38,7 +40,7 @@ export default function Home() {
         gtmProps = {
           event: "tap_home",
           eventParams: {
-            value: "xyz_abc",
+            value: "xyz_abc home",
             psid: 115500,
             email: "johnvick@example.com",
           },
@@ -48,7 +50,7 @@ export default function Home() {
         gtmProps = {
           event: "tap_about",
           eventParams: {
-            value: "xyz_abc",
+            value: "xyz_abc about",
             psid: 115500,
             email: "johnvick@example.com",
           },
@@ -56,7 +58,7 @@ export default function Home() {
         break;
       case "product":
         gtmProps = {
-          event: "tap_product",
+          event: "tap_product product",
           eventParams: {
             value: "xyz_abc",
             psid: 115500,
@@ -68,7 +70,7 @@ export default function Home() {
         gtmProps = {
           event: "tap_logout",
           eventParams: {
-            value: "xyz_abc",
+            value: "xyz_abc logout",
             psid: 115500,
             email: "johnvick@example.com",
           },
@@ -96,7 +98,7 @@ export default function Home() {
 
       <button
         onClick={handleClick}
-        className="bg-blue-600 text-white px-4 py-2 rounded ml-6 "
+        className="bg-blue-600 text-white px-4 py-2 rounded ml-6 cursor-pointer"
       >
         Set User
       </button>
