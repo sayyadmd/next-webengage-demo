@@ -16,7 +16,7 @@ export default function Home() {
   };
   function trackGTMEvent(event) {
     if (!IS_WINDOW_AVAILABLE) return;
-
+console.log('#########event',event)
     dataLayer.push(event);
   }
   function sendEvent(event) {
@@ -84,7 +84,7 @@ export default function Home() {
       default:
         break;
     }
-trackGTMEvent(event)
+trackGTMEvent(gtmProps)
     notify(event);
   }
   return (
