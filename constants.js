@@ -1,0 +1,17 @@
+export const eventBasicPayload = {
+  name: "John Vick",
+  psid: 12345678,
+  class: 7,
+  stream: "SOE,SOF,SOM",
+  course: "phy ,chem ,maths ,bio",
+  batch: "B1,B2,B3,B4,B5,B6",
+  program_status: "ACTIVE",
+  campus: "CI001,CI002,CI003,CI003,CI004,CI005",
+  date: "12-10-2025",
+  time: 10.2,
+  group_id: 1234,
+  sno: 12,
+  series: 10,
+  roll_no: 44,
+  u_id: 2345667,
+};
