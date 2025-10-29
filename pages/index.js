@@ -24,6 +24,7 @@ export default function Home() {
   };
   function trackGTMEvent(event) {
     if (!IS_WINDOW_AVAILABLE) return;
+    console.log("###event", event);
     dataLayer.push(event);
   }
   function sendEvent(event) {
@@ -40,67 +41,77 @@ export default function Home() {
       case "login":
         gtmProps = {
           event: "tap_login_login",
-          value: "xyz_abc login",
-          psid: 115500,
-          email: "johnvick@example.com",
-          ...eventBasicPayload,
-          ...getParams(event),
+          eventParams: {
+            value: "xyz_abc login",
+            psid: 115500,
+            email: "johnvick@example.com",
+            ...eventBasicPayload,
+            ...getParams(event),
+          },
           userId: finalValue,
         };
         break;
       case "home":
         gtmProps = {
           event: "tap_home",
-          value: "xyz_abc home",
-          email: "johnvick@example.com",
-          version:
-            "the government officials have enslaved the general public with their corruption. Most of them are hand in gloves with businessmen and thus the whole",
-          parts:
-            " fraud and economic, political and administrative manipulations etc have made the people feel greatly miserable and helpless",
-          role: "problem with corruption is that it threatens the very existence of the society . Corruption is like a leech draining the blood of the society",
-          rate: "ting up government money and accepting bribes.Today, although India is free",
-          jn: "ption is an indication of decadence. A corrupt person is termed immoral and dishonest. Only a person with greatly eroded values indulges in corruption.",
-          charct:
-            "corruption to ancient times. Kautilya, the author of the Arthasastra pointed out corruption of his times. He also talked about the inevitability ",
-          city: "impossible for a government servant not to eat up at least a bit of the king s revenue. These in the postwar world became only bolder while  y",
-          place:
-            "N Y Corruption today is a world-wide phenomenon and India is one of the most corrupt nations in the world.",
-          country:
-            "It is not easy to define corruption. But in a narrow sense, corruption is mostly concerned with",
-          group:
-            "Power tends to corrupt, and absolute power corrupts absolutely.",
-          ...eventBasicPayload,
-          ...getParams(event),
+          eventParams: {
+            value: "xyz_abc home",
+            email: "johnvick@example.com",
+            version:
+              "the government officials have enslaved the general public with their corruption. Most of them are hand in gloves with businessmen and thus the whole",
+            parts:
+              " fraud and economic, political and administrative manipulations etc have made the people feel greatly miserable and helpless",
+            role: "problem with corruption is that it threatens the very existence of the society . Corruption is like a leech draining the blood of the society",
+            rate: "ting up government money and accepting bribes.Today, although India is free",
+            jn: "ption is an indication of decadence. A corrupt person is termed immoral and dishonest. Only a person with greatly eroded values indulges in corruption.",
+            charct:
+              "corruption to ancient times. Kautilya, the author of the Arthasastra pointed out corruption of his times. He also talked about the inevitability ",
+            city: "impossible for a government servant not to eat up at least a bit of the king s revenue. These in the postwar world became only bolder while  y",
+            place:
+              "N Y Corruption today is a world-wide phenomenon and India is one of the most corrupt nations in the world.",
+            country:
+              "It is not easy to define corruption. But in a narrow sense, corruption is mostly concerned with",
+            group:
+              "Power tends to corrupt, and absolute power corrupts absolutely.",
+            ...eventBasicPayload,
+            ...getParams(event),
+          },
         };
         break;
       case "about":
         gtmProps = {
           event: "tap_about",
-          value: "xyz_abc about",
-          psid: 115500,
-          email: "johnvick@example.com",
-          ...eventBasicPayload,
-          ...getParams(event),
+          eventParams: {
+            value: "xyz_abc about",
+            psid: 115500,
+            email: "johnvick@example.com",
+            ...eventBasicPayload,
+            ...getParams(event),
+          },
         };
         break;
       case "product":
         gtmProps = {
           event: "tap_product",
-          value: "xyz_abc",
-          psid: 115500,
-          email: "johnvick@example.com",
-          ...eventBasicPayload,
-          ...getParams(event),
+          eventParams: {
+            value: "xyz_abc",
+            psid: 115500,
+            email: "johnvick@example.com",
+            ...eventBasicPayload,
+            ...getParams(event),
+          },
         };
         break;
       case "logout":
         gtmProps = {
           event: "tap_logout",
-          value: "xyz_abc logout",
-          psid: 115500,
-          email: "johnvick@example.com",
-          ...eventBasicPayload,
-          ...getParams(event),
+          eventParams: {
+            value: "xyz_abc logout",
+            psid: 115500,
+            email: "johnvick@example.com",
+            ...eventBasicPayload,
+            ...getParams(event),
+          },
         };
         break;
       default:
