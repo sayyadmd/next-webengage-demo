@@ -1,1 +1,1 @@
-export { default as trackGAEvent } from "./ga4";
+export { trackEvent, setUserProperties } from "./ga4";

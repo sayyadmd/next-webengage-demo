@@ -1,7 +1,7 @@
 // import { sendGTMEvent } from "@next/third-parties/google";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { trackGAEvent } from "@/utils";
+import { trackEvent } from "@/utils";
 const IS_WINDOW_AVAILABLE = typeof window !== "undefined";
 
 const notify = (event) => toast.success(event);
@@ -85,7 +85,7 @@ export default function Home() {
       default:
         break;
     }
-    trackGAEvent(gtmProps.event, gtmProps.eventParams);
+    trackEvent(gtmProps.event, gtmProps.eventParams);
     notify(event);
   }
   return (
