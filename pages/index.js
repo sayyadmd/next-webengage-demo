@@ -1,7 +1,7 @@
 // import { sendGTMEvent } from "@next/third-parties/google";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { trackEvent } from "@/utils";
+import { trackEvent, setUserProperties } from "@/utils";
 const IS_WINDOW_AVAILABLE = typeof window !== "undefined";
 
 const notify = (event) => toast.success(event);
@@ -41,6 +41,12 @@ export default function Home() {
             userId: finalValue,
           },
         };
+        setUserProperties({
+          name: "john vick IV",
+          part: 4,
+          userId: finalValue,
+          roll_no: 44,
+        });
         break;
       case "home":
         gtmProps = {
