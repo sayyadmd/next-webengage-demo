@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-const NEXT_PUBLIC_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const NEXT_PUBLIC_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
 
 export default function Document() {
   return (
