@@ -5,21 +5,21 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <script
+        {/* <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_MEASUREMENT_ID}`}
-        />
+        /> */}
         <title>next-webengage-demo</title>
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${NEXT_PUBLIC_MEASUREMENT_ID}');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${NEXT_PUBLIC_MEASUREMENT_ID}');
               `,
           }}
-        />
+        /> */}
       </Head>
       <body className="antialiased">
         <Main />
